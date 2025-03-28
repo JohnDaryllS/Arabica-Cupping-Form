@@ -349,6 +349,53 @@ input[type="range"] {
     margin: 5px 0;
 }
 
+/* Styles for attribute notes */
+.attribute-notes {
+    margin-top: 10px;
+}
+.attribute-notes input {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #d4a76a;
+    border-radius: 4px;
+    font-size: 14px;
+}
+    
+    /* Dropdown styles */
+    .dropdown {
+        margin: 20px 0;
+        border: 1px solid #d4a76a;
+        border-radius: 4px;
+        overflow: hidden;
+    }
+
+    .dropdown-header {
+        background-color: #f5e9d9;
+        padding: 10px 15px;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: bold;
+    }
+
+    .dropdown-header:hover {
+        background-color: #e8d9c1;
+    }
+
+    .dropdown-content {
+        padding: 15px;
+        background-color: white;
+    }
+
+    .dropdown-arrow {
+        transition: transform 0.3s;
+    }
+
+    .dropdown-arrow.open {
+        transform: rotate(180deg);
+    }
+
 @media (max-width: 768px) {
     .attributes-section {
         grid-template-columns: 1fr;
