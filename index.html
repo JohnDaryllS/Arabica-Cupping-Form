@@ -2723,7 +2723,10 @@ input[type="range"] {
     </div>
     
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+         document.addEventListener('DOMContentLoaded', function() {
+        // Track the currently open dropdown
+        let currentlyOpenDropdown = null;
+
         // Initialize all dropdowns
         document.querySelectorAll('.dropdown').forEach(dropdown => {
             const header = dropdown.querySelector('.dropdown-header');
@@ -2732,13 +2735,24 @@ input[type="range"] {
             
             header.addEventListener('click', function() {
                 const isHidden = content.style.display === 'none';
+                
+                // Close the currently open dropdown if it's not this one
+                if (currentlyOpenDropdown && currentlyOpenDropdown !== dropdown) {
+                    currentlyOpenDropdown.querySelector('.dropdown-content').style.display = 'none';
+                    currentlyOpenDropdown.querySelector('.dropdown-arrow').classList.remove('open');
+                }
+                
+                // Toggle this dropdown
                 content.style.display = isHidden ? 'block' : 'none';
-                arrow.classList.toggle('open', !isHidden);
+                arrow.classList.toggle('open', isHidden);
+                
+                // Update the currently open dropdown
+                currentlyOpenDropdown = isHidden ? dropdown : null;
             });
             
-            // Initialize dropdown as open
-            content.style.display = 'block';
-            arrow.classList.add('open');
+            // Initialize dropdowns as closed (except first one if you prefer)
+            content.style.display = 'none';
+            arrow.classList.remove('open');
         });
 
         // Setup all range inputs for all cups
@@ -2825,7 +2839,7 @@ input[type="range"] {
                 });
             }
         }
-        
+    
         // Calculate defect points based on defective cups and intensity
         function calculateDefectPoints(cupNumber) {
             const defectiveCups = parseInt(document.getElementById(`defectiveCups${cupNumber}`).value) || 0;
