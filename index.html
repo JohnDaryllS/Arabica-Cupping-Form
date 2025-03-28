@@ -370,47 +370,44 @@ input[type="range"] {
     border-radius: 4px;
     font-size: 14px;
 }
-
-/* Dropdown styles */
-.dropdown {
-    margin: 20px 0;
-    border: 1px solid #d4a76a;
-    border-radius: 4px;
-    overflow: hidden;
-}
-
-.dropdown-header {
-    background-color: #f5e9d9;
-    padding: 10px 15px;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-weight: bold;
-}
-
-.dropdown-header:hover {
-    background-color: #e8d9c1;
-}
-
-.dropdown-content {
-    padding: 15px;
-    background-color: white;
-}
-
-.dropdown-arrow {
-    transition: transform 0.3s;
-}
-
-.dropdown-arrow.open {
-    transform: rotate(180deg);
-}
-
-@media (max-width: 768px) {
-    .attributes-section {
-        grid-template-columns: 1fr;
+    
+    /* Dropdown styles */
+    .dropdown {
+        margin: 20px 0;
+        border: 1px solid #d4a76a;
+        border-radius: 4px;
+        overflow: hidden;
     }
-}
+
+    .dropdown-header {
+        background-color: #f5e9d9;
+        padding: 10px 15px;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: bold;
+    }
+
+    .dropdown-header:hover {
+        background-color: #e8d9c1;
+    }
+
+    .dropdown-content {
+        padding: 15px;
+        background-color: white;
+    }
+
+    .dropdown-arrow {
+        transition: transform 0.3s;
+    }
+
+    .dropdown-arrow.open {
+        transform: rotate(180deg);
+    }
+
+    /* [Rest of the CSS remains the same] */
+    /* ... */
 </style>
 <body>
     <img src="image/logo.png" alt="">
@@ -469,252 +466,251 @@ input[type="range"] {
         </tbody>
     </table>
     
-    <!-- Dropdown container for cupping attributes -->
+    <!-- Dropdown container that wraps ALL cupping attributes -->
     <div class="dropdown">
         <div class="dropdown-header" id="attributesDropdownHeader">
             <span>Cupping Attributes</span>
             <span class="dropdown-arrow">▼</span>
         </div>
         <div class="dropdown-content" id="attributesDropdownContent">
-            <div class="attributes-section">
-                <!-- Fragrance/Aroma -->
-                <div class="range-container">
-                    <div class="range-header">
-                        <h4>Fragrance/Aroma</h4>
-                        <div class="score-box" id="fragranceValue">6.00</div>
-                    </div>
-                    <input type="range" id="fragranceAroma" min="6" max="10" step="0.25" value="6">
-                    <div class="range-labels">
-                        <span>6.00</span>
-                        <span>6.25</span>
-                        <span>6.50</span>
-                        <span>6.75</span>
-                        <span>7.00</span>
-                        <span>7.25</span>
-                        <span>7.50</span>
-                        <span>7.75</span>
-                        <span>8.00</span>
-                        <span>8.25</span>
-                        <span>8.50</span>
-                        <span>8.75</span>
-                        <span>9.00</span>
-                        <span>9.25</span>
-                        <span>9.50</span>
-                        <span>9.75</span>
-                        <span>10.00</span>
-                    </div>
-                    
-                    <!-- Dry and Break vertical sliders with Qualities -->
-                    <div class="fragrance-sub-attributes">
-                        <div class="sub-attribute">
-                            <label>Dry</label>
-                            <div class="vertical-range">
-                                <div class="vertical-labels">
-                                    <span>5</span>
-                                    <span>4</span>
-                                    <span>3</span>
-                                    <span>2</span>
-                                    <span>1</span>
-                                </div>
-                                <input type="range" id="dry" min="1" max="5" step="1" value="3" orient="vertical">
-                                <div class="score-box" id="dryValue">3</div>
-                            </div>
-                        </div>
-                        
-                        <div class="qualities-container">
-                            <label>Qualities</label>
-                            <input type="text" class="small-input" id="quality1" placeholder="Quality 1">
-                            <input type="text" class="small-input" id="quality2" placeholder="Quality 2">
-                        </div>
-                        
-                        <div class="sub-attribute">
-                            <label>Break</label>
-                            <div class="vertical-range">
-                                <div class="vertical-labels">
-                                    <span>5</span>
-                                    <span>4</span>
-                                    <span>3</span>
-                                    <span>2</span>
-                                    <span>1</span>
-                                </div>
-                                <input type="range" id="break" min="1" max="5" step="1" value="3" orient="vertical">
-                                <div class="score-box" id="breakValue">3</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Fragrance/Aroma Notes -->
-                    <div class="attribute-notes">
-                        <input type="text" id="fragranceNotes" placeholder="Notes about fragrance/aroma...">
-                    </div>
-                </div><br>
+            <!-- Fragrance/Aroma Section -->
+            <div class="range-container">
+                <div class="range-header">
+                    <h4>Fragrance/Aroma</h4>
+                    <div class="score-box" id="fragranceValue">6.00</div>
+                </div>
+                <input type="range" id="fragranceAroma" min="6" max="10" step="0.25" value="6">
+                <div class="range-labels">
+                    <span>6.00</span>
+                    <span>6.25</span>
+                    <span>6.50</span>
+                    <span>6.75</span>
+                    <span>7.00</span>
+                    <span>7.25</span>
+                    <span>7.50</span>
+                    <span>7.75</span>
+                    <span>8.00</span>
+                    <span>8.25</span>
+                    <span>8.50</span>
+                    <span>8.75</span>
+                    <span>9.00</span>
+                    <span>9.25</span>
+                    <span>9.50</span>
+                    <span>9.75</span>
+                    <span>10.00</span>
+                </div>
                 
-                <!-- Flavor -->
-                <div class="range-container">
-                    <div class="range-header">
-                        <h4>Flavor</h4>
-                        <div class="score-box" id="flavorValue">6.00</div>
-                    </div>
-                    <input type="range" id="flavor" min="6" max="10" step="0.25" value="6">
-                    <div class="range-labels">
-                        <span>6.00</span>
-                        <span>6.25</span>
-                        <span>6.50</span>
-                        <span>6.75</span>
-                        <span>7.00</span>
-                        <span>7.25</span>
-                        <span>7.50</span>
-                        <span>7.75</span>
-                        <span>8.00</span>
-                        <span>8.25</span>
-                        <span>8.50</span>
-                        <span>8.75</span>
-                        <span>9.00</span>
-                        <span>9.25</span>
-                        <span>9.50</span>
-                        <span>9.75</span>
-                        <span>10.00</span>
-                    </div>
-                    
-                    <!-- Flavor Notes -->
-                    <div class="attribute-notes">
-                        <input type="text" id="flavorNotes" placeholder="Notes about flavor...">
-                    </div>
-                </div><br>
-                
-                <!-- Aftertaste -->
-                <div class="range-container">
-                    <div class="range-header">
-                        <h4>Aftertaste</h4>
-                        <div class="score-box" id="aftertasteValue">6.00</div>
-                    </div>
-                    <input type="range" id="aftertaste" min="6" max="10" step="0.25" value="6">
-                    <div class="range-labels">
-                        <span>6.00</span>
-                        <span>6.25</span>
-                        <span>6.50</span>
-                        <span>6.75</span>
-                        <span>7.00</span>
-                        <span>7.25</span>
-                        <span>7.50</span>
-                        <span>7.75</span>
-                        <span>8.00</span>
-                        <span>8.25</span>
-                        <span>8.50</span>
-                        <span>8.75</span>
-                        <span>9.00</span>
-                        <span>9.25</span>
-                        <span>9.50</span>
-                        <span>9.75</span>
-                        <span>10.00</span>
-                    </div>
-                    
-                    <!-- Aftertaste Notes -->
-                    <div class="attribute-notes">
-                        <input type="text" id="aftertasteNotes" placeholder="Notes about aftertaste...">
-                    </div>
-                </div><br>
-                
-                <!-- Acidity -->
-                <div class="range-container">
-                    <div class="range-header">
-                        <h4>Acidity</h4>
-                        <div class="score-box" id="acidityValue">6.00</div>
-                    </div>
-                    <input type="range" id="acidity" min="6" max="10" step="0.25" value="6">
-                    <div class="range-labels">
-                        <span>6.00</span>
-                        <span>6.25</span>
-                        <span>6.50</span>
-                        <span>6.75</span>
-                        <span>7.00</span>
-                        <span>7.25</span>
-                        <span>7.50</span>
-                        <span>7.75</span>
-                        <span>8.00</span>
-                        <span>8.25</span>
-                        <span>8.50</span>
-                        <span>8.75</span>
-                        <span>9.00</span>
-                        <span>9.25</span>
-                        <span>9.50</span>
-                        <span>9.75</span>
-                        <span>10.00</span>
-                    </div><br>
-                    
-                    <!-- Intensity range added here -->
-                    <div class="intensity-container">
-                        <span class="intensity-label">Intensity:</span>
-                        <div class="intensity-range">
-                            <input type="range" id="acidityIntensity" min="1" max="5" step="1" value="3" orient="vertical">
-                            <div class="intensity-labels">
-                                <span>5 (High)</span>
+                <!-- Dry and Break vertical sliders with Qualities -->
+                <div class="fragrance-sub-attributes">
+                    <div class="sub-attribute">
+                        <label>Dry</label>
+                        <div class="vertical-range">
+                            <div class="vertical-labels">
+                                <span>5</span>
                                 <span>4</span>
                                 <span>3</span>
                                 <span>2</span>
-                                <span>1 (Low)</span>
+                                <span>1</span>
                             </div>
-                            <div class="intensity-value" id="acidityIntensityValue">3</div>
+                            <input type="range" id="dry" min="1" max="5" step="1" value="3" orient="vertical">
+                            <div class="score-box" id="dryValue">3</div>
                         </div>
                     </div>
                     
-                    <!-- Acidity Notes -->
-                    <div class="attribute-notes">
-                        <input type="text" id="acidityNotes" placeholder="Notes about acidity...">
-                    </div>
-                </div><br>
-                
-                <!-- Body -->
-                <div class="range-container">
-                    <div class="range-header">
-                        <h4>Body</h4>
-                        <div class="score-box" id="bodyValue">6.00</div>
-                    </div>
-                    <input type="range" id="body" min="6" max="10" step="0.25" value="6">
-                    <div class="range-labels">
-                        <span>6.00</span>
-                        <span>6.25</span>
-                        <span>6.50</span>
-                        <span>6.75</span>
-                        <span>7.00</span>
-                        <span>7.25</span>
-                        <span>7.50</span>
-                        <span>7.75</span>
-                        <span>8.00</span>
-                        <span>8.25</span>
-                        <span>8.50</span>
-                        <span>8.75</span>
-                        <span>9.00</span>
-                        <span>9.25</span>
-                        <span>9.50</span>
-                        <span>9.75</span>
-                        <span>10.00</span>
+                    <div class="qualities-container">
+                        <label>Qualities</label>
+                        <input type="text" class="small-input" id="quality1" placeholder="Quality 1">
+                        <input type="text" class="small-input" id="quality2" placeholder="Quality 2">
                     </div>
                     
-                    <!-- Level range added here -->
-                    <div class="level-container">
-                        <span class="level-label">Level:</span>
-                        <div class="level-range">
-                            <input type="range" id="bodyLevel" min="1" max="5" step="1" value="3" orient="vertical">
-                            <div class="level-labels">
-                                <span>5 (Heavy)</span>
+                    <div class="sub-attribute">
+                        <label>Break</label>
+                        <div class="vertical-range">
+                            <div class="vertical-labels">
+                                <span>5</span>
                                 <span>4</span>
                                 <span>3</span>
                                 <span>2</span>
-                                <span>1 (Thin)</span>
+                                <span>1</span>
                             </div>
-                            <div class="level-value" id="bodyLevelValue">3</div>
+                            <input type="range" id="break" min="1" max="5" step="1" value="3" orient="vertical">
+                            <div class="score-box" id="breakValue">3</div>
                         </div>
                     </div>
-                    
-                    <!-- Body Notes -->
-                    <div class="attribute-notes">
-                        <input type="text" id="bodyNotes" placeholder="Notes about body...">
-                    </div>
+                </div>
+                
+                <!-- Fragrance/Aroma Notes -->
+                <div class="attribute-notes">
+                    <input type="text" id="fragranceNotes" placeholder="Notes about fragrance/aroma...">
+                </div>
+            </div><br>
+
+            <!-- Flavor Section -->
+            <div class="range-container">
+                <div class="range-header">
+                    <h4>Flavor</h4>
+                    <div class="score-box" id="flavorValue">6.00</div>
+                </div>
+                <input type="range" id="flavor" min="6" max="10" step="0.25" value="6">
+                <div class="range-labels">
+                    <span>6.00</span>
+                    <span>6.25</span>
+                    <span>6.50</span>
+                    <span>6.75</span>
+                    <span>7.00</span>
+                    <span>7.25</span>
+                    <span>7.50</span>
+                    <span>7.75</span>
+                    <span>8.00</span>
+                    <span>8.25</span>
+                    <span>8.50</span>
+                    <span>8.75</span>
+                    <span>9.00</span>
+                    <span>9.25</span>
+                    <span>9.50</span>
+                    <span>9.75</span>
+                    <span>10.00</span>
+                </div>
+                
+                <!-- Flavor Notes -->
+                <div class="attribute-notes">
+                    <input type="text" id="flavorNotes" placeholder="Notes about flavor...">
+                </div>
+            </div><br>
+
+            <!-- Aftertaste Section -->
+            <div class="range-container">
+                <div class="range-header">
+                    <h4>Aftertaste</h4>
+                    <div class="score-box" id="aftertasteValue">6.00</div>
+                </div>
+                <input type="range" id="aftertaste" min="6" max="10" step="0.25" value="6">
+                <div class="range-labels">
+                    <span>6.00</span>
+                    <span>6.25</span>
+                    <span>6.50</span>
+                    <span>6.75</span>
+                    <span>7.00</span>
+                    <span>7.25</span>
+                    <span>7.50</span>
+                    <span>7.75</span>
+                    <span>8.00</span>
+                    <span>8.25</span>
+                    <span>8.50</span>
+                    <span>8.75</span>
+                    <span>9.00</span>
+                    <span>9.25</span>
+                    <span>9.50</span>
+                    <span>9.75</span>
+                    <span>10.00</span>
+                </div>
+                
+                <!-- Aftertaste Notes -->
+                <div class="attribute-notes">
+                    <input type="text" id="aftertasteNotes" placeholder="Notes about aftertaste...">
+                </div>
+            </div><br>
+            
+            <!-- Acidity Section -->
+            <div class="range-container">
+                <div class="range-header">
+                    <h4>Acidity</h4>
+                    <div class="score-box" id="acidityValue">6.00</div>
+                </div>
+                <input type="range" id="acidity" min="6" max="10" step="0.25" value="6">
+                <div class="range-labels">
+                    <span>6.00</span>
+                    <span>6.25</span>
+                    <span>6.50</span>
+                    <span>6.75</span>
+                    <span>7.00</span>
+                    <span>7.25</span>
+                    <span>7.50</span>
+                    <span>7.75</span>
+                    <span>8.00</span>
+                    <span>8.25</span>
+                    <span>8.50</span>
+                    <span>8.75</span>
+                    <span>9.00</span>
+                    <span>9.25</span>
+                    <span>9.50</span>
+                    <span>9.75</span>
+                    <span>10.00</span>
                 </div><br>
                 
-                <!-- Uniformity -->
-                <div class="range-container">
+                <!-- Intensity range added here -->
+                <div class="intensity-container">
+                    <span class="intensity-label">Intensity:</span>
+                    <div class="intensity-range">
+                        <input type="range" id="acidityIntensity" min="1" max="5" step="1" value="3" orient="vertical">
+                        <div class="intensity-labels">
+                            <span>5 (High)</span>
+                            <span>4</span>
+                            <span>3</span>
+                            <span>2</span>
+                            <span>1 (Low)</span>
+                        </div>
+                        <div class="intensity-value" id="acidityIntensityValue">3</div>
+                    </div>
+                </div>
+                
+                <!-- Acidity Notes -->
+                <div class="attribute-notes">
+                    <input type="text" id="acidityNotes" placeholder="Notes about acidity...">
+                </div>
+            </div><br>
+
+            <!-- Body Section -->
+            <div class="range-container">
+                <div class="range-header">
+                    <h4>Body</h4>
+                    <div class="score-box" id="bodyValue">6.00</div>
+                </div>
+                <input type="range" id="body" min="6" max="10" step="0.25" value="6">
+                <div class="range-labels">
+                    <span>6.00</span>
+                    <span>6.25</span>
+                    <span>6.50</span>
+                    <span>6.75</span>
+                    <span>7.00</span>
+                    <span>7.25</span>
+                    <span>7.50</span>
+                    <span>7.75</span>
+                    <span>8.00</span>
+                    <span>8.25</span>
+                    <span>8.50</span>
+                    <span>8.75</span>
+                    <span>9.00</span>
+                    <span>9.25</span>
+                    <span>9.50</span>
+                    <span>9.75</span>
+                    <span>10.00</span>
+                </div>
+                
+                <!-- Level range added here -->
+                <div class="level-container">
+                    <span class="level-label">Level:</span>
+                    <div class="level-range">
+                        <input type="range" id="bodyLevel" min="1" max="5" step="1" value="3" orient="vertical">
+                        <div class="level-labels">
+                            <span>5 (Heavy)</span>
+                            <span>4</span>
+                            <span>3</span>
+                            <span>2</span>
+                            <span>1 (Thin)</span>
+                        </div>
+                        <div class="level-value" id="bodyLevelValue">3</div>
+                    </div>
+                </div>
+                
+                <!-- Body Notes -->
+                <div class="attribute-notes">
+                    <input type="text" id="bodyNotes" placeholder="Notes about body...">
+                </div>
+            </div><br>
+
+            <!-- Uniformity Section -->
+            <div class="range-container">
                     <div class="range-header">
                         <h4>Uniformity</h4>
                     </div>
@@ -746,147 +742,150 @@ input[type="range"] {
                         <input type="text" id="uniformityNotes" placeholder="Notes about uniformity...">
                     </div>
                 </div><br>
+
+            <!-- Clean Cup Section -->
+            <div class="range-container">
+                <div class="range-header">
+                    <h4>Clean Cup</h4>
+                </div>
+                <div class="radio-group">
+                    <div class="radio-option">
+                        <input type="radio" id="cleanCup6" name="cleanCup" value="6">
+                        <label for="cleanCup6">6</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="cleanCup7" name="cleanCup" value="7">
+                        <label for="cleanCup7">7</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="cleanCup8" name="cleanCup" value="8">
+                        <label for="cleanCup8">8</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="cleanCup9" name="cleanCup" value="9">
+                        <label for="cleanCup9">9</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="cleanCup10" name="cleanCup" value="10" checked>
+                        <label for="cleanCup10">10</label>
+                    </div>
+                </div>
                 
-                <!-- Clean Cup (changed to radio buttons) -->
-                <div class="range-container">
-                    <div class="range-header">
-                        <h4>Clean Cup</h4>
-                    </div>
-                    <div class="radio-group">
-                        <div class="radio-option">
-                            <input type="radio" id="cleanCup6" name="cleanCup" value="6">
-                            <label for="cleanCup6">6</label>
-                        </div>
-                        <div class="radio-option">
-                            <input type="radio" id="cleanCup7" name="cleanCup" value="7">
-                            <label for="cleanCup7">7</label>
-                        </div>
-                        <div class="radio-option">
-                            <input type="radio" id="cleanCup8" name="cleanCup" value="8">
-                            <label for="cleanCup8">8</label>
-                        </div>
-                        <div class="radio-option">
-                            <input type="radio" id="cleanCup9" name="cleanCup" value="9">
-                            <label for="cleanCup9">9</label>
-                        </div>
-                        <div class="radio-option">
-                            <input type="radio" id="cleanCup10" name="cleanCup" value="10" checked>
-                            <label for="cleanCup10">10</label>
-                        </div>
-                    </div>
-                    
-                    <!-- Clean Cup Notes -->
-                    <div class="attribute-notes">
-                        <input type="text" id="cleanCupNotes" placeholder="Notes about clean cup...">
-                    </div>
-                </div><br>
+                <!-- Clean Cup Notes -->
+                <div class="attribute-notes">
+                    <input type="text" id="cleanCupNotes" placeholder="Notes about clean cup...">
+                </div>
+            </div><br>
+
+            <!-- Overall Section -->
+            <div class="range-container">
+                <div class="range-header">
+                    <h4>Overall</h4>
+                    <div class="score-box" id="overallValue">6.00</div>
+                </div>
+                <input type="range" id="overall" min="6" max="10" step="0.25" value="6">
+                <div class="range-labels">
+                    <span>6.00</span>
+                    <span>6.25</span>
+                    <span>6.50</span>
+                    <span>6.75</span>
+                    <span>7.00</span>
+                    <span>7.25</span>
+                    <span>7.50</span>
+                    <span>7.75</span>
+                    <span>8.00</span>
+                    <span>8.25</span>
+                    <span>8.50</span>
+                    <span>8.75</span>
+                    <span>9.00</span>
+                    <span>9.25</span>
+                    <span>9.50</span>
+                    <span>9.75</span>
+                    <span>10.00</span>
+                </div>
                 
-                <!-- Overall -->
-                <div class="range-container">
-                    <div class="range-header">
-                        <h4>Overall</h4>
-                        <div class="score-box" id="overallValue">6.00</div>
-                    </div>
-                    <input type="range" id="overall" min="6" max="10" step="0.25" value="6">
-                    <div class="range-labels">
-                        <span>6.00</span>
-                        <span>6.25</span>
-                        <span>6.50</span>
-                        <span>6.75</span>
-                        <span>7.00</span>
-                        <span>7.25</span>
-                        <span>7.50</span>
-                        <span>7.75</span>
-                        <span>8.00</span>
-                        <span>8.25</span>
-                        <span>8.50</span>
-                        <span>8.75</span>
-                        <span>9.00</span>
-                        <span>9.25</span>
-                        <span>9.50</span>
-                        <span>9.75</span>
-                        <span>10.00</span>
-                    </div>
-                    
-                    <!-- Overall Notes -->
-                    <div class="attribute-notes">
-                        <input type="text" id="overallNotes" placeholder="Overall notes...">
-                    </div>
-                </div><br>
+                <!-- Overall Notes -->
+                <div class="attribute-notes">
+                    <input type="text" id="overallNotes" placeholder="Overall notes...">
+                </div>
+            </div><br>
+
+            <!-- Balance Section -->
+            <div class="range-container">
+                <div class="range-header">
+                    <h4>Balance</h4>
+                    <div class="score-box" id="balanceValue">6.00</div>
+                </div>
+                <input type="range" id="balance" min="6" max="10" step="0.25" value="6">
+                <div class="range-labels">
+                    <span>6.00</span>
+                    <span>6.25</span>
+                    <span>6.50</span>
+                    <span>6.75</span>
+                    <span>7.00</span>
+                    <span>7.25</span>
+                    <span>7.50</span>
+                    <span>7.75</span>
+                    <span>8.00</span>
+                    <span>8.25</span>
+                    <span>8.50</span>
+                    <span>8.75</span>
+                    <span>9.00</span>
+                    <span>9.25</span>
+                    <span>9.50</span>
+                    <span>9.75</span>
+                    <span>10.00</span>
+                </div>
                 
-                <!-- Balance -->
-                <div class="range-container">
-                    <div class="range-header">
-                        <h4>Balance</h4>
-                        <div class="score-box" id="balanceValue">6.00</div>
+                <!-- Balance Notes -->
+                <div class="attribute-notes">
+                    <input type="text" id="balanceNotes" placeholder="Notes about balance...">
+                </div>
+            </div><br>
+
+            <!-- Sweetness Section -->
+            <div class="range-container">
+                <div class="range-header">
+                    <h4>Sweetness</h4>
+                </div>
+                <div class="radio-group">
+                    <div class="radio-option">
+                        <input type="radio" id="sweetness6" name="sweetness" value="6">
+                        <label for="sweetness6">6</label>
                     </div>
-                    <input type="range" id="balance" min="6" max="10" step="0.25" value="6">
-                    <div class="range-labels">
-                        <span>6.00</span>
-                        <span>6.25</span>
-                        <span>6.50</span>
-                        <span>6.75</span>
-                        <span>7.00</span>
-                        <span>7.25</span>
-                        <span>7.50</span>
-                        <span>7.75</span>
-                        <span>8.00</span>
-                        <span>8.25</span>
-                        <span>8.50</span>
-                        <span>8.75</span>
-                        <span>9.00</span>
-                        <span>9.25</span>
-                        <span>9.50</span>
-                        <span>9.75</span>
-                        <span>10.00</span>
+                    <div class="radio-option">
+                        <input type="radio" id="sweetness7" name="sweetness" value="7">
+                        <label for="sweetness7">7</label>
                     </div>
-                    
-                    <!-- Balance Notes -->
-                    <div class="attribute-notes">
-                        <input type="text" id="balanceNotes" placeholder="Notes about balance...">
+                    <div class="radio-option">
+                        <input type="radio" id="sweetness8" name="sweetness" value="8">
+                        <label for="sweetness8">8</label>
                     </div>
-                </div><br>
+                    <div class="radio-option">
+                        <input type="radio" id="sweetness9" name="sweetness" value="9">
+                        <label for="sweetness9">9</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="sweetness10" name="sweetness" value="10" checked>
+                        <label for="sweetness10">10</label>
+                    </div>
+                </div>
                 
-                <!-- Sweetness (changed to radio buttons) -->
-                <div class="range-container">
-                    <div class="range-header">
-                        <h4>Sweetness</h4>
-                    </div>
-                    <div class="radio-group">
-                        <div class="radio-option">
-                            <input type="radio" id="sweetness6" name="sweetness" value="6">
-                            <label for="sweetness6">6</label>
-                        </div>
-                        <div class="radio-option">
-                            <input type="radio" id="sweetness7" name="sweetness" value="7">
-                            <label for="sweetness7">7</label>
-                        </div>
-                        <div class="radio-option">
-                            <input type="radio" id="sweetness8" name="sweetness" value="8">
-                            <label for="sweetness8">8</label>
-                        </div>
-                        <div class="radio-option">
-                            <input type="radio" id="sweetness9" name="sweetness" value="9">
-                            <label for="sweetness9">9</label>
-                        </div>
-                        <div class="radio-option">
-                            <input type="radio" id="sweetness10" name="sweetness" value="10" checked>
-                            <label for="sweetness10">10</label>
-                        </div>
-                    </div>
-                    
-                    <!-- Sweetness Notes -->
-                    <div class="attribute-notes">
-                        <input type="text" id="sweetnessNotes" placeholder="Notes about sweetness...">
-                    </div>
-                </div><br>
-            
+                <!-- Sweetness Notes -->
+                <div class="attribute-notes">
+                    <input type="text" id="sweetnessNotes" placeholder="Notes about sweetness...">
+                </div>
+            </div><br>
+
+            <!-- Defects and Additional Notes Section -->
             <div class="notes-section">
                 <h3>Defects:</h3>
+                <h4>Taint - 2</h4>
+                <h4>Fault - 4</h4>
                 <div class="notes-columns">
                     <div class="notes-column">
                         <div class="scoring-row">
-                            <label for="defectiveCups"># of defective cups:</label>
+                            <label for="defectiveCups"># of cups:</label>
                             <input type="number" id="defectiveCups" min="0">
                         </div>
                     </div>
@@ -914,7 +913,6 @@ input[type="range"] {
                 <label for="comments">Additional Notes/Comments:</label>
                 <textarea id="comments" placeholder="Enter any additional notes here..."></textarea>
             </div>
-            </div>
         </div>
     </div>
     
@@ -932,14 +930,15 @@ input[type="range"] {
             const dropdownArrow = document.querySelector('.dropdown-arrow');
             
             dropdownHeader.addEventListener('click', function() {
-                dropdownContent.style.display = dropdownContent.style.display === 'none' ? 'block' : 'none';
-                dropdownArrow.classList.toggle('open');
+                const isHidden = dropdownContent.style.display === 'none';
+                dropdownContent.style.display = isHidden ? 'block' : 'none';
+                dropdownArrow.classList.toggle('open', !isHidden);
             });
             
-            // Initially show the dropdown content
+            // Initialize dropdown as open
             dropdownContent.style.display = 'block';
             dropdownArrow.classList.add('open');
-            
+
             // Setup all range inputs
             const setupRangeInput = (inputId, valueId) => {
                 const input = document.getElementById(inputId);
