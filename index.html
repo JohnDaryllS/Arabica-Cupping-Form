@@ -7,6 +7,408 @@
     <title>SCA Arabica Cupping Form</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+<style>
+    body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    color: #333;
+}
+
+h1, h2 {
+    color: #4a2c0d;
+    text-align: center;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+}
+
+h2 {
+    margin-top: 0;
+    border-bottom: 2px solid #d4a76a;
+    padding-bottom: 10px;
+}
+
+.header-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.header-info input {
+    border: none;
+    border-bottom: 1px solid #d4a76a;
+    padding: 5px;
+    font-size: 16px;
+    width: 200px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+th, td {
+    border: 1px solid #d4a76a;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #f5e9d9;
+}
+
+.samples {
+    margin: 30px 0;
+}
+
+.sample-item {
+    display: flex;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+.sample-item label {
+    min-width: 80px;
+    font-weight: bold;
+}
+
+.sample-item input {
+    flex-grow: 1;
+    padding: 8px;
+    border: 1px solid #d4a76a;
+    border-radius: 4px;
+}
+
+.notes-section {
+    margin-top: 30px;
+}
+
+.notes-columns {
+    display: flex;
+    gap: 30px;
+}
+
+.notes-column {
+    flex: 1;
+}
+
+.checkbox-group {
+    margin-bottom: 15px;
+}
+
+.checkbox-item {
+    margin-bottom: 8px;
+}
+
+.scoring-inputs {
+    margin-top: 20px;
+}
+
+.scoring-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.scoring-row label {
+    font-weight: bold;
+}
+
+.scoring-row input {
+    width: 60px;
+    padding: 5px;
+    border: 1px solid #d4a76a;
+    border-radius: 4px;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    border: 1px solid #d4a76a;
+    border-radius: 4px;
+    margin-top: 20px;
+    resize: vertical;
+}
+
+button {
+    background-color: #4a2c0d;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    display: block;
+    margin-left: auto;
+}
+
+button:hover {
+    background-color: #5d3a15;
+}
+
+.hidden {
+    display: none;
+}
+
+#successMessage {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 15px;
+    border-radius: 4px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Added styles for the range inputs */
+
+.attributes-section{
+    left: 50%;
+    transform: translateX(-50%);
+    width: 400px;
+    position: absolute;
+}
+
+.range-container {
+    margin: 20px 0;
+    position: relative;
+}
+.range-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+.score-box {
+    width: 60px;
+    text-align: center;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-weight: bold;
+}
+.range-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+    font-size: 12px;
+}
+.range-labels span {
+    display: inline-block;
+    width: 30px;
+    text-align: center;
+}
+input[type="range"] {
+    width: 100%;
+}
+.vertical-range {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.vertical-range input[type="range"] {
+    width: 30px;
+    height: 150px;
+    writing-mode: bt-lr; /* IE */
+    -webkit-appearance: slider-vertical; /* WebKit */
+}
+.vertical-labels {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 150px;
+    font-size: 12px;
+}
+.attributes-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+.fragrance-sub-attributes {
+    display: flex;
+    gap: 20px;
+    margin-top: 10px;
+    align-items: center;
+}
+.sub-attribute {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.sub-attribute label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.qualities-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 0 30px;
+}
+.qualities-container label {
+    font-weight: bold;
+    font-size: 14px;
+}
+.small-input {
+    width: 60px;
+    padding: 5px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Added styles for intensity range */
+.intensity-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+.intensity-label {
+    font-weight: bold;
+}
+.intensity-range {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.intensity-range input[type="range"] {
+    width: 30px;
+    height: 150px;
+    writing-mode: bt-lr;
+    -webkit-appearance: slider-vertical;
+}
+.intensity-labels {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 150px;
+    font-size: 12px;
+}
+.intensity-value {
+    width: 30px;
+    text-align: center;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-weight: bold;
+}
+
+/* Added styles for level range (similar to intensity) */
+.level-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+.level-label {
+    font-weight: bold;
+}
+.level-range {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.level-range input[type="range"] {
+    width: 30px;
+    height: 150px;
+    writing-mode: bt-lr;
+    -webkit-appearance: slider-vertical;
+}
+.level-labels {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 150px;
+    font-size: 12px;
+}
+.level-value {
+    width: 30px;
+    text-align: center;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-weight: bold;
+}
+
+/* Styles for radio button groups */
+.radio-group {
+    display: flex;
+    gap: 100px;
+    margin-top: 10px;
+}
+.radio-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.radio-option input[type="radio"] {
+    margin: 5px 0;
+}
+
+/* Styles for attribute notes */
+.attribute-notes {
+    margin-top: 10px;
+}
+.attribute-notes input {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #d4a76a;
+    border-radius: 4px;
+    font-size: 14px;
+}
+    
+    /* Dropdown styles */
+    .dropdown {
+        margin: 20px 0;
+        border: 1px solid #d4a76a;
+        border-radius: 4px;
+        overflow: hidden;
+    }
+
+    .dropdown-header {
+        background-color: #f5e9d9;
+        padding: 10px 15px;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: bold;
+    }
+
+    .dropdown-header:hover {
+        background-color: #e8d9c1;
+    }
+
+    .dropdown-content {
+        padding: 15px;
+        background-color: white;
+    }
+
+    .dropdown-arrow {
+        transition: transform 0.3s;
+    }
+
+    .dropdown-arrow.open {
+        transform: rotate(180deg);
+    }
+
+    /* [Rest of the CSS remains the same] */
+    /* ... */
+</style>
 <body>
     <img src="image/logo.png" alt="">
     <h2>Arabica Cupping Form</h2>
@@ -2319,7 +2721,278 @@
     <div id="successMessage" class="hidden">
         Form submitted successfully! Thank you for your evaluation.
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    // Initialize EmailJS with your public key
+    emailjs.init("Pn6cdJq4CaxhDxbFp"); // Replace with your actual EmailJS public key
+
+    // Track the currently open dropdown
+    let currentlyOpenDropdown = null;
+
+    // Initialize all dropdowns
+    document.querySelectorAll('.dropdown').forEach(dropdown => {
+        const header = dropdown.querySelector('.dropdown-header');
+        const content = dropdown.querySelector('.dropdown-content');
+        const arrow = dropdown.querySelector('.dropdown-arrow');
+        
+        header.addEventListener('click', function() {
+            const isHidden = content.style.display === 'none';
+            
+            // Close the currently open dropdown if it's not this one
+            if (currentlyOpenDropdown && currentlyOpenDropdown !== dropdown) {
+                currentlyOpenDropdown.querySelector('.dropdown-content').style.display = 'none';
+                currentlyOpenDropdown.querySelector('.dropdown-arrow').classList.remove('open');
+            }
+            
+            // Toggle this dropdown
+            content.style.display = isHidden ? 'block' : 'none';
+            arrow.classList.toggle('open', isHidden);
+            
+            // Update the currently open dropdown
+            currentlyOpenDropdown = isHidden ? dropdown : null;
+        });
+        
+        // Initialize dropdowns as closed
+        content.style.display = 'none';
+        arrow.classList.remove('open');
+    });
+
+    // Setup all range inputs for all cups (1-5)
+    for (let i = 1; i <= 5; i++) {
+        // Setup horizontal range inputs
+        setupRangeInput(`fragranceAroma${i}`, `fragranceValue${i}`);
+        setupRangeInput(`flavor${i}`, `flavorValue${i}`);
+        setupRangeInput(`aftertaste${i}`, `aftertasteValue${i}`);
+        setupRangeInput(`acidity${i}`, `acidityValue${i}`);
+        setupRangeInput(`body${i}`, `bodyValue${i}`);
+        setupRangeInput(`overall${i}`, `overallValue${i}`);
+        setupRangeInput(`balance${i}`, `balanceValue${i}`);
+        
+        // Setup vertical range inputs (Dry & Break)
+        setupVerticalRangeInput(`dry${i}`, `dryValue${i}`);
+        setupVerticalRangeInput(`break${i}`, `breakValue${i}`);
+        
+        // Setup Acidity Intensity slider
+        const acidityIntensity = document.getElementById(`acidityIntensity${i}`);
+        const acidityIntensityValue = document.getElementById(`acidityIntensityValue${i}`);
+        if (acidityIntensity && acidityIntensityValue) {
+            acidityIntensity.addEventListener('input', function() {
+                acidityIntensityValue.textContent = this.value;
+                calculateTotalScore(i);
+            });
+        }
+        
+        // Setup Body Level slider
+        const bodyLevel = document.getElementById(`bodyLevel${i}`);
+        const bodyLevelValue = document.getElementById(`bodyLevelValue${i}`);
+        if (bodyLevel && bodyLevelValue) {
+            bodyLevel.addEventListener('input', function() {
+                bodyLevelValue.textContent = this.value;
+                calculateTotalScore(i);
+            });
+        }
+        
+        // Add event listeners for radio buttons (Uniformity, Clean Cup, Sweetness)
+        document.querySelectorAll(`input[name="uniformity${i}"]`).forEach(radio => {
+            radio.addEventListener('change', function() {
+                calculateTotalScore(i);
+            });
+        });
+        document.querySelectorAll(`input[name="cleanCup${i}"]`).forEach(radio => {
+            radio.addEventListener('change', function() {
+                calculateTotalScore(i);
+            });
+        });
+        document.querySelectorAll(`input[name="sweetness${i}"]`).forEach(radio => {
+            radio.addEventListener('change', function() {
+                calculateTotalScore(i);
+            });
+        });
+        
+        // Calculate defect points when defective cups or intensity changes
+        document.getElementById(`defectiveCups${i}`)?.addEventListener('input', function() {
+            calculateDefectPoints(i);
+        });
+        document.getElementById(`intensity${i}`)?.addEventListener('input', function() {
+            calculateDefectPoints(i);
+        });
+        
+        // Initialize defect points calculation
+        calculateDefectPoints(i);
+    }
     
-    <script src="script.js"></script>
+    // --- Helper Functions ---
+    
+    // Setup horizontal range input
+    function setupRangeInput(inputId, valueId) {
+        const input = document.getElementById(inputId);
+        const valueDisplay = document.getElementById(valueId);
+        
+        if (input && valueDisplay) {
+            // Initialize display
+            valueDisplay.textContent = parseFloat(input.value).toFixed(2);
+            
+            input.addEventListener('input', function() {
+                valueDisplay.textContent = parseFloat(this.value).toFixed(2);
+                const cupNumber = inputId.match(/\d+/)?.[0] || '1';
+                calculateTotalScore(cupNumber);
+            });
+        }
+    }
+    
+    // Setup vertical range input
+    function setupVerticalRangeInput(inputId, valueId) {
+        const input = document.getElementById(inputId);
+        const valueDisplay = document.getElementById(valueId);
+        
+        if (input && valueDisplay) {
+            // Initialize display
+            valueDisplay.textContent = input.value;
+            
+            input.addEventListener('input', function() {
+                valueDisplay.textContent = this.value;
+            });
+        }
+    }
+
+    // Calculate defect points based on defective cups and intensity
+    function calculateDefectPoints(cupNumber) {
+        const defectiveCups = parseInt(document.getElementById(`defectiveCups${cupNumber}`).value) || 0;
+        const intensity = parseInt(document.getElementById(`intensity${cupNumber}`).value) || 0;
+        
+        // Calculate defect points (multiply cups by intensity)
+        const defectPoints = defectiveCups * intensity;
+        document.getElementById(`defectPoints${cupNumber}`).value = defectPoints;
+        
+        // Calculate final score
+        calculateFinalScore(cupNumber);
+    }
+    
+    // Calculate total score for a specific cup
+    function calculateTotalScore(cupNumber) {
+        let total = 0;
+        
+        // Add up all attribute scores
+        total += parseFloat(document.getElementById(`fragranceAroma${cupNumber}`).value) || 0;
+        total += parseFloat(document.getElementById(`flavor${cupNumber}`).value) || 0;
+        total += parseFloat(document.getElementById(`aftertaste${cupNumber}`).value) || 0;
+        total += parseFloat(document.getElementById(`acidity${cupNumber}`).value) || 0;
+        total += parseFloat(document.getElementById(`body${cupNumber}`).value) || 0;
+        
+        // Add radio button values
+        const uniformity = document.querySelector(`input[name="uniformity${cupNumber}"]:checked`);
+        total += uniformity ? parseFloat(uniformity.value) : 0;
+        
+        const cleanCup = document.querySelector(`input[name="cleanCup${cupNumber}"]:checked`);
+        total += cleanCup ? parseFloat(cleanCup.value) : 0;
+        
+        total += parseFloat(document.getElementById(`balance${cupNumber}`).value) || 0;
+        
+        const sweetness = document.querySelector(`input[name="sweetness${cupNumber}"]:checked`);
+        total += sweetness ? parseFloat(sweetness.value) : 0;
+        
+        total += (parseFloat(document.getElementById(`overall${cupNumber}`).value) || 0) * 2; // Overall is weighted double
+        
+        // Cap the total score at 100
+        total = Math.min(total, 100);
+        
+        document.getElementById(`totalScore${cupNumber}`).value = total.toFixed(2);
+        calculateFinalScore(cupNumber);
+    }
+    
+    // Calculate final score for a specific cup
+    function calculateFinalScore(cupNumber) {
+        const totalScore = parseFloat(document.getElementById(`totalScore${cupNumber}`).value) || 0;
+        const defectPoints = parseFloat(document.getElementById(`defectPoints${cupNumber}`).value) || 0;
+        
+        // Calculate final score (total score minus defect points, minimum 0)
+        const finalScore = Math.max(totalScore - defectPoints, 0);
+        document.getElementById(`finalScore${cupNumber}`).value = finalScore.toFixed(2);
+    }
+    
+    // --- Form Submission with EmailJS ---
+    document.getElementById('submitBtn').addEventListener('click', function() {
+        // Simple validation
+        const name = document.getElementById('name').value;
+        const date = document.getElementById('date').value;
+        const tableNo = document.getElementById('tableNo').value;
+        
+        if (!name || !date || !tableNo) {
+            alert('Please fill in all required fields (Name, Date, Table no)');
+            return;
+        }
+        
+        // Collect all form data
+        const formData = {
+            name: name,
+            date: date,
+            tableNo: tableNo,
+            cups: []
+        };
+        
+        // Collect data for each cup (1-5)  
+        for (let i = 1; i <= 5; i++) {
+            const cupData = {
+                cupNumber: i,
+                fragranceAroma: document.getElementById(`fragranceValue${i}`)?.textContent || 'N/A',
+                dryScore: document.getElementById(`dryValue${i}`)?.textContent || 'N/A',
+                breakScore: document.getElementById(`breakValue${i}`)?.textContent || 'N/A',
+                quality1: document.getElementById(`quality1-${i}`).value || "N/A",
+                quality2: document.getElementById(`quality2-${i}`).value || "N/A",
+                fragranceNotes: document.getElementById(`fragranceNotes${i}`).value || "No notes",
+                flavor: document.getElementById(`flavorValue${i}`)?.textContent || 'N/A',
+                flavorNotes: document.getElementById(`flavorNotes${i}`).value || "No notes",
+                aftertaste: document.getElementById(`aftertasteValue${i}`)?.textContent || 'N/A',
+                aftertasteNotes: document.getElementById(`aftertasteNotes${i}`).value || "No notes",
+                acidity: document.getElementById(`acidityValue${i}`)?.textContent || 'N/A',
+                acidityIntensity: document.getElementById(`acidityIntensityValue${i}`).textContent,
+                acidityNotes: document.getElementById(`acidityNotes${i}`).value || "No notes",
+                body: document.getElementById(`bodyValue${i}`)?.textContent || 'N/A',
+                bodyLevel: document.getElementById(`bodyLevelValue${i}`)?.textContent || 'N/A',
+                bodyNotes: document.getElementById(`bodyNotes${i}`).value || "No notes",
+                uniformity: document.querySelector(`input[name="uniformity${i}"]:checked`)?.value || "N/A",
+                uniformityNotes: document.getElementById(`uniformityNotes${i}`).value || "No notes",
+                cleanCup: document.querySelector(`input[name="cleanCup${i}"]:checked`)?.value || "N/A",
+                cleanCupNotes: document.getElementById(`cleanCupNotes${i}`).value || "No notes",
+                overall: document.getElementById(`overallValue${i}`)?.textContent || 'N/A',
+                overallNotes: document.getElementById(`overallNotes${i}`).value || "No notes",
+                balance: document.getElementById(`balanceValue${i}`)?.textContent || 'N/A',
+                balanceNotes: document.getElementById(`balanceNotes${i}`).value || "No notes",
+                sweetness: document.querySelector(`input[name="sweetness${i}"]:checked`)?.value || "N/A",
+                sweetnessNotes: document.getElementById(`sweetnessNotes${i}`).value || "No notes",
+                defectiveCups: document.getElementById(`defectiveCups${i}`).value || "0",
+                intensity: document.getElementById(`intensity${i}`).value || "0",
+                defectPoints: document.getElementById(`defectPoints${i}`).value || "0",
+                totalScore: document.getElementById(`totalScore${i}`).value || "0",
+                finalScore: document.getElementById(`finalScore${i}`).value || "0",
+                comments: document.getElementById(`comments${i}`).value || "No additional comments"
+            };
+            
+            formData.cups.push(cupData);
+        }
+        
+        // Send email using EmailJS
+        emailjs.send("service_mbnqqog", "template_xbirdcj", formData)
+            .then(function(response) {
+                console.log("Email sent successfully!", response.status, response.text);
+                document.getElementById('successMessage').classList.remove('hidden');
+                document.getElementById('submitBtn').disabled = true;
+                document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth' });
+                
+                // Optional: Reset form after successful submission
+                // document.querySelector('form').reset();
+            }, function(error) {
+                console.error("Email sending failed:", error);
+                alert("Failed to send the form. Please check your connection and try again.");
+            });
+    });
+    
+    // Initialize total score calculation for all cups
+    for (let i = 1; i <= 5; i++) {
+        calculateTotalScore(i);
+    }
+});
+    </script>
 </body>
 </html>
