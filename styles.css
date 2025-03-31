@@ -396,6 +396,53 @@ input[type="range"] {
     transform: rotate(180deg);
 }
 
+/* Modal Styling */
+.warning-modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 1000;
+  }
+  
+  .warning-modal button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    border: none;
+    background: red;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  /* Style the button */
+#scrollToTopBtn {
+    position: fixed;
+    bottom: 100px;
+    right: 15px;
+    z-index: 100;
+    display: none;
+    background-color: #d4a76a;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 10px 17px;
+    cursor: pointer;
+    font-size: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  #scrollToTopBtn:hover {
+    background-color: #0056b3;
+  }
+  
+
 /* Extra Small (XS) - Mobile devices (portrait) */
 @media (max-width: 575px) {
     body {
@@ -486,4 +533,11 @@ input[type="range"] {
         width: 100%;
         padding: 15px;
     }
+
+    #scrollToTopBtn {
+        height: 50px;
+        width: 50px;
+        padding: 0px 10px 10px 10px;
+        font-size: 30px;
+      }
 }
