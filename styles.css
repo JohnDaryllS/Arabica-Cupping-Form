@@ -484,6 +484,7 @@ input[type="range"] {
     .header-info {
         flex-direction: column;
         gap: 10px;
+        padding-top: 10px;
     }
     
     .header-field {
@@ -499,6 +500,17 @@ input[type="range"] {
     .dropdown-header {
         padding: 10px 12px;
         font-size: 0.9rem;
+    }
+
+    .dropdown-content {
+        padding: 10%;
+        background-color: white;
+    }
+
+    .radio-group {
+        display: flex;
+        gap: 50px;
+        margin-top: 10px;
     }
             
     .score-box {
