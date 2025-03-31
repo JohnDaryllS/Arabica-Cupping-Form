@@ -277,7 +277,7 @@ input[type="range"] {
     width: 30px;
     height: 150px;
     writing-mode: bt-lr;
-    -webkit-appearance: slider-vertical;
+    appearance: slider-vertical;
 }
 .intensity-labels {
     display: flex;
@@ -315,7 +315,7 @@ input[type="range"] {
     width: 30px;
     height: 150px;
     writing-mode: bt-lr;
-    -webkit-appearance: slider-vertical;
+    appearance: slider-vertical;
 }
 .level-labels {
     display: flex;
